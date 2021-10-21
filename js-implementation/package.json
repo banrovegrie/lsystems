@@ -1,0 +1,14 @@
+{
+  "name": "js-implementation",
+  "version": "1.0.0",
+  "description": "Lsystems in js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "lindenmayer": "^1.5.4"
+  }
+}
