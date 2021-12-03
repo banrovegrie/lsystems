@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jsonfn": "^0.31.0",
     "lindenmayer": "^1.5.4"
   }
 }

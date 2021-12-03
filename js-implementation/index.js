@@ -12,6 +12,8 @@ ctx.translate(canvas.width / 2, canvas.height / 4)
 // +: rotates the canvas 60 degree
 // -: rotates the canvas -60 degree
 
+var angle = 60;
+
 var koch = new LSystem({
     axiom: 'F++F++F',
     productions: { 'F': 'F-F++F-F' },
@@ -27,6 +29,21 @@ var koch = new LSystem({
         }
     }
 })
+
+var myjson = `{`;
+myjson += `\"axiom\":\"${koch["axiom"]}\",`;
+myjson += `\"productions\":{`;
+for (var [key, value] of koch["productions"].entries())
+    myjson += `\"${key}\": \"${value.successor}\",`;
+myjson = myjson.slice(0, -1) + `},`;
+myjson += `\"finals\":{`;
+myjson += `\"+\": \"${angle}\",`;
+myjson += `\"-\": \"${-angle}\",`;
+myjson = myjson.slice(0, -1) + `}`;
+myjson += `}`;
+console.log(myjson);
+// To confirm
+console.log(JSON.parse(myjson));
 
 koch.iterate(3)
 koch.final()
